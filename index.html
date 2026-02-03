@@ -1,171 +1,289 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name | Portfolio</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background: #f4f6f8;
-            color: #333;
-        }
-        header {
-            background: #2c3e50;
-            color: white;
-            text-align: center;
-            padding: 60px 20px;
-        }
-        header img {
-            width: 140px;
-            height: 140px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 4px solid #fff;
-            margin-top: 15px;
-        }
-        header h1 {
-            font-size: 2.5rem;
-            margin: 0;
-        }
-        header p {
-            font-size: 1.2rem;
-            margin: 5px 0;
-        }
-        section {
-            padding: 40px 20px;
-            max-width: 1000px;
-            margin: auto;
-        }
-        h2 {
-            color: #2c3e50;
-            border-bottom: 3px solid #3498db;
-            padding-bottom: 8px;
-            font-size: 1.8rem;
-            margin-bottom: 15px;
-        }
-        .about-text {
-            font-size: 1rem;
-            line-height: 1.6;
-        }
-        .skills span {
-            display: inline-block;
-            background: #3498db;
-            color: white;
-            padding: 8px 14px;
-            margin: 5px;
-            border-radius: 20px;
-            font-size: 14px;
-        }
-        .projects {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-        }
-        .project-card {
-            background: #fff;
-            padding: 15px;
-            border-radius: 8px;
-            box-shadow: 0px 2px 6px rgba(0,0,0,0.1);
-        }
-        .project-card img {
-            width: 100%;
-            border-radius: 6px;
-        }
-        .project-card h3 {
-            margin-top: 12px;
-            font-size: 1.2rem;
-            color: #2c3e50;
-        }
-        .contact-info p {
-            font-size: 1rem;
-            margin: 6px 0;
-        }
-        .contact-info a.button {
-            display: inline-block;
-            padding: 10px 16px;
-            background: #27ae60;
-            color: white;
-            text-decoration: none;
-            border-radius: 6px;
-            margin-top: 12px;
-        }
-        footer {
-            text-align: center;
-            padding: 18px;
-            background: #2c3e50;
-            color: white;
-            font-size: 0.9rem;
-        }
-        @media (max-width: 600px) {
-            header h1 { font-size: 2rem; }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Name | Portfolio</title>
+
+<style>
+:root {
+    --bg: #f4f6f8;
+    --text: #333;
+    --card: #ffffff;
+    --primary: #2c3e50;
+    --accent: #1abc9c;
+}
+
+body.dark {
+    --bg: #121212;
+    --text: #eaeaea;
+    --card: #1e1e1e;
+    --primary: #000;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+}
+
+/* NAVBAR */
+nav {
+    position: fixed;
+    width: 100%;
+    background: var(--primary);
+    color: white;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
+
+nav h2 {
+    font-size: 22px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.toggle-btn {
+    cursor: pointer;
+    font-size: 20px;
+    margin-left: 15px;
+}
+
+/* HAMBURGER */
+.menu {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* HERO */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    padding: 120px 20px;
+    background: var(--primary);
+    color: white;
+    flex-wrap: wrap;
+}
+
+.hero img {
+    width: 230px;
+    height: 230px;
+    border-radius: 50%;
+    border: 5px solid white;
+    object-fit: cover;
+}
+
+.hero-text {
+    max-width: 500px;
+}
+
+.hero-text h1 {
+    font-size: 2.8rem;
+}
+
+.hero-text h3 {
+    color: var(--accent);
+    margin: 10px 0;
+}
+
+/* SECTIONS */
+section {
+    max-width: 1000px;
+    margin: auto;
+    padding: 60px 20px;
+}
+
+section h2 {
+    border-bottom: 3px solid var(--accent);
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+/* SKILLS */
+.skills span {
+    display: inline-block;
+    background: var(--accent);
+    color: white;
+    padding: 8px 15px;
+    margin: 6px;
+    border-radius: 20px;
+}
+
+/* PROJECTS */
+.projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+}
+
+.project-card {
+    background: var(--card);
+    padding: 18px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+/* CONTACT */
+.contact a {
+    display: inline-block;
+    margin-top: 10px;
+    background: var(--accent);
+    color: white;
+    padding: 10px 18px;
+    border-radius: 6px;
+    text-decoration: none;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: var(--primary);
+    color: white;
+}
+
+/* SCROLL ANIMATION */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: 1s;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background: var(--primary);
+        flex-direction: column;
+        padding: 15px;
+        border-radius: 8px;
+    }
+    nav ul.show {
+        display: flex;
+    }
+    .menu {
+        display: block;
+    }
+}
+</style>
 </head>
+
 <body>
 
-<header>
-    <h1>Shumaila Mujahid</h1>
-    <p>Web Developer</p>
-    <img src="20260201_121214_0000.jpg" alt="Your Profile Photo">
-</header>
+<!-- NAV -->
+<nav>
+    <h2>Your Name</h2>
+    <div>
+        <span class="menu" onclick="toggleMenu()">☰</span>
+        <span class="toggle-btn" onclick="toggleTheme()">🌙</span>
+    </div>
+    <ul id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
 
-<section id="about">
-    <h2>About Me</h2>
-    <p class="about-text">
-        Hello! I’m a passionate web developer with skills in building modern, responsive websites. I have experience
-        in HTML, CSS, Python, and more. I enjoy solving problems, bringing designs to life, and learning new tech.
-    </p>
-</section>
+<!-- HERO -->
+<div class="hero" id="home">
+    <img src="your-photo.jpg" alt="Profile">
+    <div class="hero-text">
+        <h1>Your Name</h1>
+        <h3>Computer Programmer</h3>
+        <p>
+            IT graduate passionate about modern web development,
+            problem solving, and continuous learning.
+        </p>
+    </div>
+</div>
 
-<section id="skills">
-    <h2>Skills</h2>
+<section id="skills" class="reveal">
+    <h2>Skills</h2><br>
     <div class="skills">
-        <span>HTML & CSS</span>
-        <span>Networking</span>
+        <span>HTML</span>
+        <span>CSS</span>
         <span>JavaScript</span>
-        <span>Database</span>
         <span>Python</span>
         <span>SQL</span>
     </div>
 </section>
 
-<section id="projects">
+<section id="projects" class="reveal">
     <h2>Projects</h2>
     <div class="projects">
-        <!-- Repeat these project-card blocks for each project -->
         <div class="project-card">
-            <img src="project1.jpg" alt="Project 1">
-            <h3>Project One</h3>
-            <p>Short description of what this project does and what tech you used.</p>
+            <h3>Student Database</h3>
+            <p>SQL-based system for managing student records.</p>
         </div>
         <div class="project-card">
-            <img src="project2.jpg" alt="Project 2">
-            <h3>Project Two</h3>
-            <p>Short description of what this project does and what tech you used.</p>
+            <h3>Employee System</h3>
+            <p>Conceptual employee management platform.</p>
         </div>
-        <!-- Add more projects here... -->
     </div>
 </section>
 
-<section id="contact">
+<section id="contact" class="reveal contact">
     <h2>Contact</h2>
-    <div class="contact-info">
-        <p>Email: shumailab011@gmail.com</p>
-        <p>Phone: +92-3258107194</p>
-        <a href="cv.pdf" class="button">Download CV</a>
-    </div>
+    <p>Email: your.email@example.com</p>
+    <p>Phone: +92-XXXXXXXXXX</p>
+    <a href="cv.pdf">Download CV</a>
 </section>
 
 <footer>
-    © 2026 Your Name | Portfolio Website
+    © 2026 Your Name | Portfolio
 </footer>
+
+<script>
+function toggleTheme() {
+    document.body.classList.toggle("dark");
+}
+
+function toggleMenu() {
+    document.getElementById("navLinks").classList.toggle("show");
+}
+
+// Scroll reveal
+window.addEventListener("scroll", () => {
+    document.querySelectorAll(".reveal").forEach(el => {
+        const top = el.getBoundingClientRect().top;
+        if (top < window.innerHeight - 100) {
+            el.classList.add("active");
+        }
+    });
+});
+</script>
 
 </body>
 </html>
-
-
-
-
