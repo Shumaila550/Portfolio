@@ -3,22 +3,22 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Your Name | Portfolio</title>
+<title>Shumaila | Portfolio</title>
 
 <style>
 :root {
     --bg: #f4f6f8;
     --text: #333;
     --card: #ffffff;
-    --primary: #2c3e50;
+    --primary: #0f172a;
     --accent: #1abc9c;
 }
 
 body.dark {
-    --bg: #121212;
+    --bg: #0b1120;
     --text: #eaeaea;
-    --card: #1e1e1e;
-    --primary: #000;
+    --card: #1e293b;
+    --primary: #020617;
 }
 
 * {
@@ -34,7 +34,7 @@ body {
     color: var(--text);
 }
 
-/* NAVBAR */
+/* NAV */
 nav {
     position: fixed;
     width: 100%;
@@ -47,32 +47,17 @@ nav {
     z-index: 1000;
 }
 
-nav h2 {
-    font-size: 22px;
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-}
-
-.toggle-btn {
+.theme-icon {
+    width: 38px;
+    height: 38px;
     cursor: pointer;
-    font-size: 20px;
-    margin-left: 15px;
+    border-radius: 50%;
+    background: #1f2933;
+    padding: 6px;
 }
 
-/* HAMBURGER */
-.menu {
-    display: none;
-    font-size: 24px;
-    cursor: pointer;
+body.dark .theme-icon {
+    background: #e5e7eb;
 }
 
 /* HERO */
@@ -81,13 +66,12 @@ nav ul li a {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 120px 8%;
+    padding: 140px 8%;
     background: linear-gradient(135deg, #0f172a, #1e293b);
     color: white;
     gap: 60px;
 }
 
-/* IMAGE CONTAINER */
 .hero-image {
     background: #000;
     padding: 25px;
@@ -96,55 +80,36 @@ nav ul li a {
 
 .hero-image img {
     width: 300px;
-    height: auto;
-    border-radius: 10px;
-    object-fit: cover;
+    border-radius: 12px;
 }
 
-/* TEXT */
 .hero-text {
     max-width: 520px;
 }
 
 .hero-text h1 {
     font-size: 3rem;
-    margin-bottom: 10px;
 }
 
-.hero-text h1 span {
+.hero-text span {
     color: var(--accent);
 }
 
 .hero-text h3 {
     font-size: 2rem;
-    line-height: 1.3;
-    margin-bottom: 20px;
+    margin: 15px 0;
 }
 
 .hero-text p {
-    font-size: 1rem;
     line-height: 1.7;
     color: #e5e7eb;
 }
-
-/* RESPONSIVE */
-@media (max-width: 900px) {
-    .hero {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .hero-image img {
-        width: 260px;
-    }
-}
-
 
 /* SECTIONS */
 section {
     max-width: 1000px;
     margin: auto;
-    padding: 60px 20px;
+    padding: 70px 20px;
 }
 
 section h2 {
@@ -166,15 +131,39 @@ section h2 {
 /* PROJECTS */
 .projects {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
 }
 
 .project-card {
     background: var(--card);
-    padding: 18px;
-    border-radius: 8px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.project-card ul {
+    margin-left: 18px;
+    line-height: 1.6;
+}
+
+.project-links {
+    margin-top: 12px;
+}
+
+.project-links a {
+    display: inline-block;
+    margin-right: 10px;
+    padding: 7px 15px;
+    background: var(--accent);
+    color: white;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.project-links a:hover {
+    background: #149c82;
 }
 
 /* CONTACT */
@@ -196,7 +185,7 @@ footer {
     color: white;
 }
 
-/* SCROLL ANIMATION */
+/* SCROLL */
 .reveal {
     opacity: 0;
     transform: translateY(40px);
@@ -208,23 +197,38 @@ footer {
     transform: translateY(0);
 }
 
+/* RIGHT ICON NAV */
+.right-controls {
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.control {
+    width: 48px;
+    height: 48px;
+    background: #1f2933;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.control:hover {
+    background: var(--accent);
+}
+
 /* RESPONSIVE */
-@media (max-width: 768px) {
-    nav ul {
-        display: none;
-        position: absolute;
-        top: 60px;
-        right: 20px;
-        background: var(--primary);
+@media (max-width: 900px) {
+    .hero {
         flex-direction: column;
-        padding: 15px;
-        border-radius: 8px;
-    }
-    nav ul.show {
-        display: flex;
-    }
-    .menu {
-        display: block;
+        text-align: center;
     }
 }
 </style>
@@ -235,68 +239,69 @@ footer {
 <!-- NAV -->
 <nav>
     <h2>Shumaila</h2>
-    <div>
-        <span class="menu" onclick="toggleMenu()">☰</span>
-        <span class="toggle-btn" onclick="toggleTheme()">🌙</span>
-    </div>
-    <ul id="navLinks">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-    </ul>
+    <img src="icons/theme-icon.png" class="theme-icon" onclick="toggleTheme()">
 </nav>
-    
+
 <!-- HERO -->
 <div class="hero" id="home">
-
-    <!-- LEFT IMAGE -->
     <div class="hero-image">
-        <img src="profile.jpg" alt="Profile Photo">
+        <img src="profile.jpg" alt="Profile">
     </div>
-
-    <!-- RIGHT TEXT -->
     <div class="hero-text">
         <h1>Hi, all I'm <span>Shumaila</span></h1>
-        <h3>
-            Computer Programmer,<br>
-            Database & Web Enthusiast
-        </h3>
+        <h3>Computer Programmer<br>Database & Web Enthusiast</h3>
         <p>
-            I am an IT graduate passionate about technology, problem-solving,
-            and building modern database designs. I aim to grow my skills and
-            contribute to professional IT environments.
+            IT graduate passionate about backend systems, databases,
+            and modern web applications.
         </p>
     </div>
-
 </div>
 
-
+<!-- SKILLS -->
 <section id="skills" class="reveal">
-    <h2>Skills</h2><br>
+    <h2>Skills</h2>
     <div class="skills">
         <span>HTML & CSS</span>
-        <span>Database</span>
-        <span>JavaScript</span>
         <span>Python</span>
+        <span>Flask</span>
+        <span>SQLite</span>
         <span>SQL</span>
     </div>
 </section>
 
+<!-- PROJECTS -->
 <section id="projects" class="reveal">
     <h2>Projects</h2>
     <div class="projects">
+
+        <!-- MINI ORG SYSTEM -->
         <div class="project-card">
-            <h3>Student Database</h3>
-            <p>SQL-based system for managing student records.</p>
+            <h3>Mini Organization Management System</h3>
+            <p>
+                A Flask-based web application for managing organization
+                users, attendance, and dashboards.
+            </p>
+
+            <p><strong>Tech Stack:</strong> Python, Flask, SQLite, HTML, CSS</p>
+
+            <p><strong>Features:</strong></p>
+            <ul>
+                <li>User authentication (login system)</li>
+                <li>Attendance management</li>
+                <li>Dashboard interface</li>
+                <li>SQLite database integration</li>
+            </ul>
+
+            <div class="project-links">
+                <a href="https://github.com/yourusername/MiniOrgSystem" target="_blank">GitHub</a>
+                <a href="https://miniorgsystem.onrender.com" target="_blank">Live Demo</a>
+            </div>
         </div>
-        <div class="project-card">
-            <h3>Employee System</h3>
-            <p>Conceptual employee management platform.</p>
-        </div>
+
     </div>
 </section>
 
+<!-- CONTACT -->
 <section id="contact" class="reveal contact">
     <h2>Contact</h2>
     <p>Email: shumailab011@gmail.com</p>
@@ -308,20 +313,22 @@ footer {
     © 2026 Shumaila | Portfolio
 </footer>
 
+<!-- RIGHT ICON NAV -->
+<div class="right-controls">
+    <a href="#home" class="control">🏠</a>
+    <a href="#skills" class="control">👤</a>
+    <a href="#projects" class="control">💼</a>
+    <a href="#contact" class="control">✉️</a>
+</div>
+
 <script>
 function toggleTheme() {
     document.body.classList.toggle("dark");
 }
 
-function toggleMenu() {
-    document.getElementById("navLinks").classList.toggle("show");
-}
-
-// Scroll reveal
 window.addEventListener("scroll", () => {
     document.querySelectorAll(".reveal").forEach(el => {
-        const top = el.getBoundingClientRect().top;
-        if (top < window.innerHeight - 100) {
+        if (el.getBoundingClientRect().top < window.innerHeight - 100) {
             el.classList.add("active");
         }
     });
@@ -330,12 +337,3 @@ window.addEventListener("scroll", () => {
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
