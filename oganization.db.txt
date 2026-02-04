@@ -1,0 +1,8 @@
+MiniOrgSystem/
++-- app.py                # Flask web app
++-- organization.db       # SQLite database (optional, can create automatically)
++-- templates/            # Folder
+¦   +-- login.html
+¦   +-- dashboard.html
+¦   +-- attendance.html
++-- README.md             # Optional
