@@ -34,23 +34,39 @@ body {
     color: var(--text);
 }
 
-/* NAV */
+/* NAVBAR */
 nav {
     position: fixed;
+    top: 0;
     width: 100%;
     background: var(--primary);
     color: white;
-    padding: 15px 30px;
+    padding: 15px 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     z-index: 1000;
 }
 
-/* THEME TOGGLE (NO ICON FILES) */
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+nav ul li a:hover {
+    color: var(--accent);
+}
+
 .theme-toggle {
-    width: 42px;
-    height: 42px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     border: none;
     background: #1f2933;
@@ -67,28 +83,17 @@ body.dark .theme-toggle {
 /* HERO */
 .hero {
     min-height: 100vh;
+    padding: 140px 8%;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 140px 8%;
+    gap: 60px;
     background: linear-gradient(135deg, #0f172a, #1e293b);
     color: white;
-    gap: 60px;
-}
-
-.hero-image {
-    background: #000;
-    padding: 25px;
-    border-radius: 20px;
 }
 
 .hero-image img {
     width: 300px;
-    border-radius: 12px;
-}
-
-.hero-text {
-    max-width: 520px;
+    border-radius: 16px;
 }
 
 .hero-text h1 {
@@ -100,8 +105,8 @@ body.dark .theme-toggle {
 }
 
 .hero-text h3 {
-    font-size: 2rem;
     margin: 15px 0;
+    font-size: 1.8rem;
 }
 
 .hero-text p {
@@ -113,7 +118,7 @@ body.dark .theme-toggle {
 section {
     max-width: 1000px;
     margin: auto;
-    padding: 70px 20px;
+    padding: 80px 20px;
 }
 
 section h2 {
@@ -133,15 +138,6 @@ section h2 {
 }
 
 /* PROJECTS */
-.project-image {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 8px;
-    margin-bottom: 15px;
-    display: block;
-}
-
 .projects {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -151,30 +147,49 @@ section h2 {
 .project-card {
     background: var(--card);
     padding: 20px;
-    border-radius: 10px;
+    border-radius: 12px;
     box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.project-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.project-links a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 16px;
+    background: var(--accent);
+    color: white;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 14px;
 }
 
 /* CONTACT */
 .contact a {
     display: inline-block;
-    margin-top: 10px;
+    margin-top: 15px;
     background: var(--accent);
     color: white;
-    padding: 10px 18px;
+    padding: 10px 20px;
     border-radius: 6px;
     text-decoration: none;
 }
 
 /* FOOTER */
 footer {
-    text-align: center;
-    padding: 20px;
     background: var(--primary);
     color: white;
+    text-align: center;
+    padding: 20px;
 }
 
-/* SCROLL */
+/* SCROLL REVEAL */
 .reveal {
     opacity: 0;
     transform: translateY(40px);
@@ -184,33 +199,6 @@ footer {
 .reveal.active {
     opacity: 1;
     transform: translateY(0);
-}
-
-/* RIGHT ICON NAV */
-.right-controls {
-    position: fixed;
-    right: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.control {
-    width: 48px;
-    height: 48px;
-    background: #1f2933;
-    color: white;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-}
-
-.control:hover {
-    background: var(--accent);
 }
 
 /* RESPONSIVE */
@@ -225,93 +213,96 @@ footer {
 
 <body>
 
-<!-- NAV -->
 <nav>
     <h2>Shumaila</h2>
+
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+
     <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
 </nav>
 
-<!-- HERO -->
 <div class="hero" id="home">
     <div class="hero-image">
         <img src="profile.jpg" alt="Profile">
     </div>
     <div class="hero-text">
-        <h1>Hi, all I'm <span>Shumaila</span></h1>
-        <h3>Computer Programmer<br>Database & Web Enthusiast</h3>
+        <h1>Hi, I'm <span>Shumaila</span></h1>
+        <h3>Computer Programmer</h3>
         <p>IT graduate passionate about backend systems, databases, and modern web applications.</p>
     </div>
 </div>
 
-<!-- SKILLS -->
 <section id="skills" class="reveal">
     <h2>Skills</h2>
     <div class="skills">
         <span>HTML & CSS</span>
+        <span>JavaScript</span>
         <span>Python</span>
         <span>Flask</span>
-        <span>OOPs</span>
         <span>SQL</span>
     </div>
 </section>
 
-<!-- PROJECTS -->
 <section id="projects" class="reveal">
     <h2>Projects</h2>
 
     <div class="projects">
         <div class="project-card">
-            <img src="pro1.jpg" class="project-image">
-            <h3>NovaTech Solution | Digital Agency</h3>
-            <p>Full-service digital agency website.</p>
+            <img src="pro1.jpg" class="project-image" alt="NovaTech Project">
+            <h3>NovaTech Solution</h3>
+            <p>Professional digital agency website.</p>
+            <div class="project-links">
+                <a href="https://shumaila550.github.io/MiniOrgSystem/" target="_blank">Demo</a>
+            </div>
         </div>
 
         <div class="project-card">
             <h3>Student Management System</h3>
-            <p>Python & Flask based CRUD system.</p>
+            <p>Flask-based system with CRUD operations.</p>
         </div>
 
         <div class="project-card">
-            <h3>Personal Portfolio Website</h3>
+            <h3>Personal Portfolio</h3>
             <p>Responsive portfolio with dark/light mode.</p>
         </div>
     </div>
 </section>
 
-<!-- CONTACT -->
 <section id="contact" class="reveal contact">
     <h2>Contact</h2>
     <p>Email: shumailab011@gmail.com</p>
     <p>Phone: +92-3258107194</p>
+    <a href="cv.pdf" download>Download CV</a>
 </section>
 
-<footer>© 2026 Shumaila | Portfolio</footer>
-
-<!-- RIGHT ICON NAV -->
-<div class="right-controls">
-    <a href="#home" class="control">🏠</a>
-    <a href="#skills" class="control">👤</a>
-    <a href="#projects" class="control">💼</a>
-    <a href="#contact" class="control">✉️</a>
-</div>
+<footer>
+    © 2026 Shumaila | Portfolio
+</footer>
 
 <script>
 const toggleBtn = document.querySelector(".theme-toggle");
 
 function toggleTheme() {
     document.body.classList.toggle("dark");
-    localStorage.setItem("theme",
-        document.body.classList.contains("dark") ? "dark" : "light"
-    );
     toggleBtn.textContent = document.body.classList.contains("dark") ? "☀️" : "🌙";
 }
 
-window.addEventListener("DOMContentLoaded", () => {
-    if (localStorage.getItem("theme") === "dark") {
-        document.body.classList.add("dark");
-        toggleBtn.textContent = "☀️";
-    }
-});
+const reveals = document.querySelectorAll(".reveal");
+function revealOnScroll() {
+    reveals.forEach(el => {
+        if (el.getBoundingClientRect().top < window.innerHeight - 100) {
+            el.classList.add("active");
+        }
+    });
+}
+
+window.addEventListener("scroll", revealOnScroll);
+window.addEventListener("load", revealOnScroll);
 </script>
 
 </body>
