@@ -387,16 +387,6 @@ function toggleTheme() {
 }
 
 }
-    window.addEventListener("DOMContentLoaded", () => {
-    const savedTheme = localStorage.getItem("theme");
-
-    if (savedTheme === "dark") {
-        document.body.classList.add("dark");
-        themeIcon.src = "icons/sun.png";
-    } else {
-        themeIcon.src = "icons/moon.png";
-    }
-});
 
 window.addEventListener("scroll", () => {
     document.querySelectorAll(".reveal").forEach(el => {
@@ -409,6 +399,7 @@ window.addEventListener("scroll", () => {
 
 </body>
 </html>
+
 
 
 
