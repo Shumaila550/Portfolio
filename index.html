@@ -61,6 +61,19 @@ body {
 
 
 /* NAVBAR */
+    .nav-right {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
 nav {
     position: fixed;
     top: 0;
@@ -422,7 +435,7 @@ window.addEventListener("scroll", revealOnScroll);
 window.addEventListener("load", revealOnScroll);
 
 /* 🔥 ACTIVE MENU HIGHLIGHT */
-const sections = document.querySelectorAll("section");
+const sections = document.querySelectorAll("section, .hero");
 const navLinks = document.querySelectorAll("nav ul li a");
 
 window.addEventListener("scroll", () => {
@@ -446,6 +459,7 @@ window.addEventListener("scroll", () => {
 
 </body>
 </html>
+
 
 
 
