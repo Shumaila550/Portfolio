@@ -73,7 +73,7 @@ nav {
     z-index: 1000;
 }
 
-}
+
 nav ul li a {
     position: relative;
     color: white;          /* default */
@@ -93,8 +93,6 @@ body.dark nav ul li a {
     color: #eaeaea;
 }
 
-
-}
     nav ul li a::after {
     content: "";
     position: absolute;
@@ -308,15 +306,19 @@ footer {
 <nav>
     <h2>My Portfolio</h2>
 
-    <ul>
-        <li><a href="#home">Home</a></li>   
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-    </ul>
+    <!-- RIGHT SIDE -->
+    <div class="nav-right">
+        <ul>
+            <li><a href="#home">Home</a></li>   
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
 
-    <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+        <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+    </div>
 </nav>
+
 
 <div class="hero" id="home">
     <div class="hero-image">
@@ -444,6 +446,7 @@ window.addEventListener("scroll", () => {
 
 </body>
 </html>
+
 
 
 
