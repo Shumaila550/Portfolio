@@ -85,10 +85,37 @@ nav ul {
 }
 
 nav ul li a {
-    color: white;
+    position: relative;
+    color: var(--text);
     text-decoration: none;
     font-weight: 500;
+    padding: 5px 0;
+    transition: color 0.3s ease;
+
 }
+    nav ul li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0;
+    height: 2px;
+    background: var(--accent);
+    transition: width 0.3s ease;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+    nav ul li a.active {
+    color: var(--accent);
+}
+
+nav ul li a.active::after {
+    width: 100%;
+}
+
+
 
 nav ul li a:hover {
     color: var(--accent);
@@ -367,6 +394,33 @@ footer {
 </footer>
 
 <script>
+    <!-- 🔹 Active menu highlight script -->
+<script>
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll("nav ul li a");
+
+window.addEventListener("scroll", () => {
+    let current = "";
+
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop - 100;
+        if (scrollY >= sectionTop) {
+            current = section.getAttribute("id");
+        }
+    });
+
+    navLinks.forEach(link => {
+        link.classList.remove("active");
+        if (link.getAttribute("href") === `#${current}`) {
+            link.classList.add("active");
+        }
+    });
+});
+</script>
+
+</body>
+</html>
+
 const toggleBtn = document.querySelector(".theme-toggle");
 
 function toggleTheme() {
@@ -389,6 +443,7 @@ window.addEventListener("load", revealOnScroll);
 
 </body>
 </html>
+
 
 
 
