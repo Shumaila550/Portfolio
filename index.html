@@ -252,6 +252,27 @@ section h2 {
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 25px;
 }
+    .mini-projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.mini-title {
+    margin-top: 70px;
+    position: relative;
+    display: inline-block;
+}
+
+.mini-title::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: #00b894;   /* your green color */
+    margin-top: 8px;
+}
 
 .project-card {
     background: var(--card);
@@ -316,6 +337,7 @@ footer {
         flex-direction: column;
         text-align: center;
     }
+
 }
 </style>
 </head>
@@ -498,6 +520,7 @@ window.addEventListener("scroll", () => {
 
 </body>
 </html>
+
 
 
 
