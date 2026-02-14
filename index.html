@@ -194,6 +194,20 @@ body.dark .theme-toggle {
     background: linear-gradient(135deg, #0f172a, #1e293b);
     color: white;
 }
+    .hero-image img {
+    width: 300px;
+    border-radius: 16px;
+    animation: float 4s ease-in-out infinite;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+/* Floating animation */
+@keyframes float {
+    0%   { transform: translateY(0px); }
+    50%  { transform: translateY(-18px); }
+    100% { transform: translateY(0px); }
+}
+
 
 .hero-image img {
     width: 300px;
@@ -526,6 +540,7 @@ window.addEventListener("scroll", () => {
 
 </body>
 </html>
+
 
 
 
