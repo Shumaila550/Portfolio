@@ -6,686 +6,306 @@
 <title>Shumaila | Portfolio</title>
 
 <style>
-
-:root {
-    --bg: #f4f6f8;
-    --text: #333;
-    --card: #ffffff;
-    --primary: #0f172a;
-    --accent: #1abc9c;
+:root{
+    --bg:#f4f6f8;
+    --text:#333;
+    --card:#ffffff;
+    --primary:#0f172a;
+    --accent:#1abc9c;
 }
 
-body.dark {
-    --bg: #0b1120;
-    --text: #eaeaea;
-    --card: #1e293b;
-    --primary: #020617;
+body.dark{
+    --bg:#0b1120;
+    --text:#eaeaea;
+    --card:#1e293b;
+    --primary:#020617;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
 }
 
-body {
-    font-family: Arial, sans-serif;
-    background: var(--bg);
-    color: var(--text);
+body{
+    font-family:Arial, sans-serif;
+    background:var(--bg);
+    color:var(--text);
 }
-    /* BUTTONS */
-.btn {
-    display: inline-block;
-    margin-top: 25px;
-    margin-right: 12px;
-    padding: 12px 26px;
-    background: var(--accent);
-    color: white;
-    text-decoration: none;
-    border-radius: 8px;
-    font-weight: 500;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
-}
-
-.btn.secondary {
-    background: transparent;
-    border: 2px solid var(--accent);
-    color: var(--accent);
-}
-
 
 /* NAVBAR */
-    .nav-right {
-    margin-left: auto;
-    display: flex;
-    align-items: center;
-    gap: 25px;
+nav{
+    position:fixed;
+    top:0;
+    width:100%;
+    background:var(--card);
+    padding:15px 40px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    z-index:1000;
+    box-shadow:0 4px 12px rgba(0,0,0,0.08);
 }
 
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 25px;
+nav ul{
+    list-style:none;
+    display:flex;
+    gap:25px;
 }
 
-nav {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background: var(--card);
-    padding: 15px 40px;
-    display: flex;
-    align-items: center;
-    z-index: 1000;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+nav a{
+    text-decoration:none;
+    color:var(--text);
+    font-weight:500;
 }
 
-nav ul li a {
-    position: relative;
-    text-decoration: none;
-    font-weight: 500;
-    padding: 5px 0;
-    transition: color 0.3s ease;
-}
+nav a:hover{ color:var(--accent); }
 
-/* Light mode navbar text */
-body:not(.dark) nav ul li a {
-    color: #111;
-}
-
-/* Dark mode navbar text */
-body.dark nav ul li a {
-    color: #eaeaea;
-}
-
-    nav ul li a::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -4px;
-    width: 0;
-    height: 2px;
-    background: var(--accent);
-    transition: width 0.3s ease;
-}
-
-nav ul li a:hover::after {
-    width: 100%;
-}
-    nav ul li a.active {
-    color: var(--accent);
-}
-
-nav ul li a.active::after {
-    width: 100%;
-}
-
-
-
-nav ul li a:hover {
-    color: var(--accent);
-}
-    backdrop-filter: blur(10px);
-body.dark nav {
-    background: rgba(15, 23, 42, 0.85);
-}
-
-
-.theme-toggle {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    border: none;
-    background: #1f2933;
-    color: white;
-    font-size: 18px;
-    cursor: pointer;
-}
-
-body.dark .theme-toggle {
-    background: #e5e7eb;
-    color: #111827;
+.theme-toggle{
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    border:none;
+    background:#1f2933;
+    color:white;
+    font-size:18px;
+    cursor:pointer;
 }
 
 /* HERO */
-    /* HERO INTRO TEXT (PETER STYLE) */
-.intro-small {
-    font-size: 1.1rem;
-    color: #cbd5f5;
-    letter-spacing: 1px;
+.hero{
+    min-height:100vh;
+    padding:140px 8%;
+    display:flex;
+    align-items:center;
+    gap:80px;
+    background:linear-gradient(135deg,#0f172a,#1e293b);
+    color:white;
 }
 
-.intro-name {
-    font-size: 3.5rem;
-    line-height: 1.1;
-    margin: 10px 0;
+.hero img{
+    width:260px;
+    border-radius:16px;
 }
 
-.intro-name span {
-    color: var(--accent);
-}
+.intro-name span{ color:var(--accent); }
 
-.intro-role {
-    font-size: 2.2rem;
-    font-weight: 600;
-    margin-top: 10px;
-    line-height: 1.2;
-}
-
-.intro-desc {
-    max-width: 500px;
-    margin-top: 20px;
-    line-height: 1.8;
-    color: #e5e7eb;
-}
-
-.hero {
-    min-height: 100vh;
-    padding: 140px 8%;
-    display: flex;
-    align-items: center;
-    gap: 120px;
-    background: linear-gradient(135deg, #0f172a, #1e293b);
-    color: white;
-}
-
-
-.hero-image img {
-    width: 300px;
-    border-radius: 16px;
-}
-
-
-}
-.hero-text h1 {
-    font-size: 3rem;
-}
-
-.hero-text span {
-    color: var(--accent);
-}
-
-.hero-text h3 {
-    margin: 15px 0;
-    font-size: 1.8rem;
-}
-
-.hero-text p {
-    line-height: 1.7;
-    color: #e5e7eb;
-    margin-top: 10px;
-
-
+.btn{
+    display:inline-block;
+    margin-top:25px;
+    padding:12px 26px;
+    background:var(--accent);
+    color:white;
+    text-decoration:none;
+    border-radius:8px;
 }
 
 /* SECTIONS */
-section {
-    max-width: 1000px;
-    margin: auto;
-    padding: 80px 20px;
+section{
+    max-width:1000px;
+    margin:auto;
+    padding:80px 20px;
 }
 
-section h2 {
-    border-bottom: 3px solid var(--accent);
-    display: inline-block;
-    margin-bottom: 20px;
+section h2{
+    border-bottom:3px solid var(--accent);
+    display:inline-block;
+    margin-bottom:25px;
 }
 
 /* SKILLS */
-.skills span {
-    display: inline-block;
-    background: var(--accent);
-    color: white;
-    padding: 8px 15px;
-    margin: 6px;
-    border-radius: 20px;
-}
-    /* ===== SKILLS BARS STYLE ===== */
-
-.skills-section{
-    background:#020617;
-    color:white;
-    padding:80px 20px;
-    border-radius:12px;
-}
-
-.skills-section h2{
-    text-align:center;
-    margin-bottom:40px;
-}
-
 .skill{
     width:70%;
     margin:25px auto;
 }
 
-.skill p{
-    margin-bottom:8px;
-    font-weight:500;
-}
-
 .progress{
     height:8px;
-    background:#111827;
+    background:rgba(0,0,0,0.08);
     border-radius:20px;
     overflow:hidden;
+}
+
+body.dark .progress{
+    background:rgba(255,255,255,0.08);
 }
 
 .progress span{
     display:block;
     height:100%;
     width:0;
-    background:linear-gradient(90deg,#38bdf8,#0ea5e9);
+    background:linear-gradient(90deg,var(--accent),#38bdf8);
     border-radius:20px;
     transition:1.6s ease;
-    box-shadow:0 0 12px rgba(56,189,248,0.7);
+    box-shadow:0 0 10px rgba(26,188,156,0.45);
 }
-
 
 /* PROJECTS */
-.projects {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px;
-}
-    .mini-projects {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px;
-    margin-top: 30px;
+.projects{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
 }
 
-.mini-title {
-    margin-top: 70px;
-    display: inline-block;
-    border-bottom: 3px solid var(--accent);
-    padding-bottom: 6px;
+.project-card{
+    background:var(--card);
+    padding:20px;
+    border-radius:12px;
+    box-shadow:0 6px 12px rgba(0,0,0,0.15);
 }
 
-
-.project-card {
-    background: var(--card);
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-}
-
-.project-image {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 8px;
-    margin-bottom: 15px;
-}
-
-.project-links a {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 8px 16px;
-    background: var(--accent);
-    color: white;
-    border-radius: 6px;
-    text-decoration: none;
-    font-size: 14px;
+.project-card img{
+    width:100%;
+    border-radius:8px;
+    margin-bottom:12px;
 }
 
 /* CONTACT */
-.contact a {
-    display: inline-block;
-    margin-top: 15px;
-    background: var(--accent);
-    color: white;
-    padding: 10px 20px;
-    border-radius: 6px;
-    text-decoration: none;
+.contact a{
+    display:inline-block;
+    margin-top:15px;
+    background:var(--accent);
+    color:white;
+    padding:10px 20px;
+    border-radius:6px;
+    text-decoration:none;
 }
 
 /* FOOTER */
-footer {
-    background: var(--primary);
-    color: white;
-    text-align: center;
-    padding: 20px;
+footer{
+    background:var(--primary);
+    color:white;
+    text-align:center;
+    padding:20px;
 }
 
-/* SCROLL REVEAL */
-.reveal {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: 1s;
+/* REVEAL */
+.reveal{
+    opacity:0;
+    transform:translateY(40px);
+    transition:1s;
 }
-
-.reveal.active {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* RESPONSIVE */
-@media (max-width: 900px) {
-    .hero {
-        flex-direction: column;
-        text-align: center;
-    }
-
+.reveal.active{
+    opacity:1;
+    transform:translateY(0);
 }
 </style>
-    /* ✨ CLICKABLE SKILLS */
-.skill-item{
-    display:inline-block;
-    background:var(--accent);
-    color:white;
-    padding:10px 18px;
-    margin:8px;
-    border-radius:25px;
-    cursor:pointer;
-    transition:0.3s;
-    border:2px solid transparent;
-}
-
-.skill-item:hover{
-    transform:translateY(-3px);
-    box-shadow:0 8px 18px rgba(0,0,0,0.25);
-}
-
-/* ACTIVE SKILL */
-.skill-item.active{
-    background:transparent;
-    color:var(--accent);
-    border:2px solid var(--accent);
-    box-shadow:0 0 18px rgba(26,188,156,0.6);
-}
-
 </head>
 
 <body>
 
 <nav>
-    <h2>My Portfolio</h2>
-
-    <!-- RIGHT SIDE -->
-    <div class="nav-right">
-        <ul>
-            <li><a href="#home">Home</a></li>   
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-
-        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
-    🌙
-</button>
-
-    </div>
+    <h3>My Portfolio</h3>
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
 </nav>
 
-
+<!-- HERO -->
 <div class="hero" id="home">
-    <div class="hero-image">
-        <img src="profile.jpg" alt="Profile">
-    </div>
-    <div class="hero-text">
-        <div class="intro">
-    <p class="intro-small">Hi, I'm</p>
-
-    <h1 class="intro-name">
-        <span>Shumaila</span>
-    </h1>
-
-    <h2 class="intro-role">
-        Python <br> Web Developer
-    </h2>
-
-    <p class="intro-desc">
-        I build clean, functional web applications using Python, Flask, HTML, CSS, and JavaScript.
-        I focus on backend logic, database integration, and user-friendly interfaces.
-    </p>
-</div>
-
-     
-
-<a href="#projects" class="btn">View My Work</a>
-<a href="#contact" class="btn secondary">Contact Me</a>
-
+    <img src="profile.jpg" alt="Profile">
+    <div>
+        <p>Hi, I'm</p>
+        <h1 class="intro-name"><span>Shumaila</span></h1>
+        <h2>Python Web Developer</h2>
+        <p>I build clean web apps using Flask, HTML, CSS & JS.</p>
+        <a href="#projects" class="btn">View Work</a>
     </div>
 </div>
 
-<section id="skills" class="reveal skills-section">
-    <h2>Skills</h2>
+<!-- SKILLS -->
+<section id="skills" class="reveal">
+<h2>Skills</h2>
 
-    <div class="skill">
-        <p>HTML & CSS</p>
-        <div class="progress"><span data-width="92%"></span></div>
-    </div>
+<div class="skill">
+<p>HTML & CSS</p>
+<div class="progress"><span data-width="92%"></span></div>
+</div>
 
-    <div class="skill">
-        <p>JavaScript</p>
-        <div class="progress"><span data-width="88%"></span></div>
-    </div>
+<div class="skill">
+<p>JavaScript</p>
+<div class="progress"><span data-width="88%"></span></div>
+</div>
 
-    <div class="skill">
-        <p>Python / Flask</p>
-        <div class="progress"><span data-width="82%"></span></div>
-    </div>
+<div class="skill">
+<p>Python / Flask</p>
+<div class="progress"><span data-width="82%"></span></div>
+</div>
 
 </section>
 
-
+<!-- PROJECTS -->
 <section id="projects" class="reveal">
-    <h2>Projects</h2>
+<h2>Projects</h2>
+<div class="projects">
 
-    <div class="projects">
-        <div class="project-card">
-            <img src="pro1.jpg" class="project-image" alt="NovaTech Project">
-            <h3>NovaTech Solution</h3>
-            <p>A professional digital agency website delivering innovative, scalable, and user-focused solutions.</p>
-            <div class="project-links">
-                <a href="https://shumaila550.github.io/MiniOrgSystem/" target="_blank">Demo</a>
-            </div>
-        </div>
+<div class="project-card">
+<img src="pro1.jpg">
+<h3>Agency Website</h3>
+<p>Modern responsive agency site.</p>
+</div>
 
-        <div class="project-card">
-          
-            <img src="pro2.jpg" class="project-image" alt="Hospital Management System">
-            <h3>CareTech Hospital ERP System</h3>
-            <p>is a centralized ERP solution designed to streamline hospital management and operational workflows.</p>
-            <div class="project-links">
-                <a href="https://shumaila550.github.io/Digital-Agency/" target="_blank">Demo</a>
-            </div>
-        </div>
+<div class="project-card">
+<img src="pro2.jpg">
+<h3>Hospital ERP</h3>
+<p>Management system for hospitals.</p>
+</div>
 
-        <div class="project-card">
-           <img src="pro3.jpg" class="project-image" alt="Blog Website">   
-          <h3>Blog Website</h3>
-         <p>Responsive Blog website with dark mode.</p>
-         <div class="project-links">
-             <a href="https://shumaila550.github.io/blog/" target="_blank">Demo</a>
-            </div>
-   </div>
+<div class="project-card">
+<img src="pro3.jpg">
+<h3>Blog Platform</h3>
+<p>Responsive blog with dark mode.</p>
+</div>
 
-        </div> <!-- ✅ CLOSE .projects HERE -->
-
-
-         <!-- ===== Mini Projects Title ===== -->
-            <h2 class="mini-title">Mini Projects</h2>
-
-            <div class="mini-projects">
-
-        <div class="project-card">
-            <h3>Calculator</h3>
-            <p>A responsive calculator built using HTML, CSS & JavaScript.</p>
-            <div class="project-links">
-                <a href="https://shumaila550.github.io/Calculator/" target="_blank">Demo</a>
-            </div>
-        </div>
-
-        <div class="project-card">
-            <h3>To-Do App</h3>
-            <p>Simple task management application with local storage support.</p>
-            <div class="project-links">
-                <a href="https://shumaila550.github.io/todo-app/" target="_blank">Demo</a>
-            </div>
-        </div>
-
-        <div class="project-card">
-            <h3>Login Form UI</h3>
-            <p>Modern animated login and registration form design.</p>
-            <div class="project-links">
-                <a href="https://shumaila550.github.io/login-form-ui/" target="_blank">Demo</a>
-            </div>
-        </div>
-
-    </div>
-
+</div>
 </section>
 
+<!-- CONTACT -->
 <section id="contact" class="reveal contact">
-    <h2>Contact</h2>
-    <p>Email: shumailab011@gmail.com</p>
-    <p>Phone: +92-3258107194</p>
-    <a href="cv2.pdf" download>Download CV</a>
+<h2>Contact</h2>
+<p>Email: your@email.com</p>
+<a href="cv.pdf" download>Download CV</a>
 </section>
 
 <footer>
-    © 2026 Shumaila | Portfolio
+© 2026 Shumaila Portfolio
 </footer>
 
-
 <script>
-/* 🌙 THEME TOGGLE */
-const toggleBtn = document.querySelector(".theme-toggle");
-
-function toggleTheme() {
+/* THEME TOGGLE */
+function toggleTheme(){
     document.body.classList.toggle("dark");
-    toggleBtn.textContent = document.body.classList.contains("dark") ? "☀️" : "🌙";
 }
 
-/* ✨ SCROLL REVEAL */
-const reveals = document.querySelectorAll(".reveal");
-
-function revealOnScroll() {
-    reveals.forEach(el => {
-        if (el.getBoundingClientRect().top < window.innerHeight - 100) {
+/* SCROLL REVEAL */
+const reveals=document.querySelectorAll(".reveal");
+function reveal(){
+    reveals.forEach(el=>{
+        if(el.getBoundingClientRect().top < window.innerHeight-100){
             el.classList.add("active");
         }
     });
 }
+window.addEventListener("scroll",reveal);
+window.addEventListener("load",reveal);
 
-window.addEventListener("scroll", revealOnScroll);
-window.addEventListener("load", revealOnScroll);
-
-/* 🔥 ACTIVE MENU HIGHLIGHT */
-const sections = document.querySelectorAll("section, .hero");
-const navLinks = document.querySelectorAll("nav ul li a");
-
-window.addEventListener("scroll", () => {
-    let current = "";
-
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop - 120;
-        if (window.scrollY >= sectionTop) {
-            current = section.getAttribute("id");
-        }
-    });
-
-    navLinks.forEach(link => {
-        link.classList.remove("active");
-        if (link.getAttribute("href") === `#${current}`) {
-            link.classList.add("active");
-        }
-        /* ===== SKILL BAR ANIMATION ===== */
-const skillBars=document.querySelectorAll(".progress span");
-
+/* SKILL BAR ANIMATION */
+const bars=document.querySelectorAll(".progress span");
 function animateSkills(){
-    skillBars.forEach(bar=>{
-        const top=bar.getBoundingClientRect().top;
-        if(top < window.innerHeight-100){
+    bars.forEach(bar=>{
+        if(bar.getBoundingClientRect().top < window.innerHeight-100){
             bar.style.width=bar.dataset.width;
         }
     });
 }
-
 window.addEventListener("scroll",animateSkills);
 window.addEventListener("load",animateSkills);
-
-    });
-});
 </script>
-    /* 🧠 SKILL CLICK HIGHLIGHT */
-const skills=document.querySelectorAll(".skill-item");
-
-skills.forEach(skill=>{
-    skill.addEventListener("click",()=>{
-        skills.forEach(s=>s.classList.remove("active"));
-        skill.classList.add("active");
-    });
-});
-
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
