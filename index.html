@@ -246,6 +246,47 @@ section h2 {
     margin: 6px;
     border-radius: 20px;
 }
+    /* ===== SKILLS BARS STYLE ===== */
+
+.skills-section{
+    background:#020617;
+    color:white;
+    padding:80px 20px;
+    border-radius:12px;
+}
+
+.skills-section h2{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.skill{
+    width:70%;
+    margin:25px auto;
+}
+
+.skill p{
+    margin-bottom:8px;
+    font-weight:500;
+}
+
+.progress{
+    height:8px;
+    background:#111827;
+    border-radius:20px;
+    overflow:hidden;
+}
+
+.progress span{
+    display:block;
+    height:100%;
+    width:0;
+    background:linear-gradient(90deg,#38bdf8,#0ea5e9);
+    border-radius:20px;
+    transition:1.6s ease;
+    box-shadow:0 0 12px rgba(56,189,248,0.7);
+}
+
 
 /* PROJECTS */
 .projects {
@@ -414,19 +455,26 @@ footer {
     </div>
 </div>
 
-<section id="skills" class="reveal">
+<section id="skills" class="reveal skills-section">
     <h2>Skills</h2>
 
-    <div class="skills">
-        <span class="skill-item">HTML & CSS</span>
-        <span class="skill-item">JavaScript</span>
-        <span class="skill-item">Python</span>
-        <span class="skill-item">Flask</span>
-        <span class="skill-item">SQL</span>
-        <span class="skill-item">Prompt Engineering</span>
-        <span class="skill-item">Database Management</span>
+    <div class="skill">
+        <p>HTML & CSS</p>
+        <div class="progress"><span data-width="92%"></span></div>
     </div>
+
+    <div class="skill">
+        <p>JavaScript</p>
+        <div class="progress"><span data-width="88%"></span></div>
+    </div>
+
+    <div class="skill">
+        <p>Python / Flask</p>
+        <div class="progress"><span data-width="82%"></span></div>
+    </div>
+
 </section>
+
 
 <section id="projects" class="reveal">
     <h2>Projects</h2>
@@ -566,6 +614,7 @@ skills.forEach(skill=>{
 
 </body>
 </html>
+
 
 
 
