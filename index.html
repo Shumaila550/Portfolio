@@ -553,9 +553,20 @@ window.addEventListener("scroll", () => {
     });
 });
 </script>
+    /* 🧠 SKILL CLICK HIGHLIGHT */
+const skills=document.querySelectorAll(".skill-item");
+
+skills.forEach(skill=>{
+    skill.addEventListener("click",()=>{
+        skills.forEach(s=>s.classList.remove("active"));
+        skill.classList.add("active");
+    });
+});
+
 
 </body>
 </html>
+
 
 
 
