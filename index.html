@@ -238,13 +238,30 @@ section h2 {
 }
 
 /* SKILLS */
-.skills span {
-    display: inline-block;
-    background: var(--accent);
-    color: white;
-    padding: 8px 15px;
-    margin: 6px;
-    border-radius: 20px;
+.skill{
+    width:70%;
+    margin:25px auto;
+}
+
+.progress{
+    height:8px;
+    background:rgba(0,0,0,0.08);
+    border-radius:20px;
+    overflow:hidden;
+}
+
+body.dark .progress{
+    background:rgba(255,255,255,0.08);
+}
+
+.progress span{
+    display:block;
+    height:100%;
+    width:0;
+    background:linear-gradient(90deg,var(--accent),#38bdf8);
+    border-radius:20px;
+    transition:1.6s ease;
+    box-shadow:0 0 10px rgba(26,188,156,0.45);
 }
 
 /* PROJECTS */
@@ -388,19 +405,26 @@ footer {
     </div>
 </div>
 
+<!-- SKILLS -->
 <section id="skills" class="reveal">
-    <h2>Skills</h2>
-    <div class="skills">
-        <span>HTML & CSS</span>
-        <span>JavaScript</span>
-        <span>Python</span>
-        <span>Flask</span>
-        <span>SQL</span>
-        <span>Prompt Engineering</span>
-         <span>Database Management</span>
-    </div>
-</section>
+<h2>Skills</h2>
 
+<div class="skill">
+<p>HTML & CSS</p>
+<div class="progress"><span data-width="92%"></span></div>
+</div>
+
+<div class="skill">
+<p>JavaScript</p>
+<div class="progress"><span data-width="88%"></span></div>
+</div>
+
+<div class="skill">
+<p>Python / Flask</p>
+<div class="progress"><span data-width="82%"></span></div>
+</div>
+</section>
+    
 <section id="projects" class="reveal">
     <h2>Projects</h2>
 
@@ -543,6 +567,7 @@ window.addEventListener("load", animateSkills);
 </script>
 </body>
 </html>
+
 
 
 
