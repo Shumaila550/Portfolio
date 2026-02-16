@@ -598,6 +598,21 @@ window.addEventListener("scroll", () => {
         if (link.getAttribute("href") === `#${current}`) {
             link.classList.add("active");
         }
+        /* ===== SKILL BAR ANIMATION ===== */
+const skillBars=document.querySelectorAll(".progress span");
+
+function animateSkills(){
+    skillBars.forEach(bar=>{
+        const top=bar.getBoundingClientRect().top;
+        if(top < window.innerHeight-100){
+            bar.style.width=bar.dataset.width;
+        }
+    });
+}
+
+window.addEventListener("scroll",animateSkills);
+window.addEventListener("load",animateSkills);
+
     });
 });
 </script>
@@ -614,6 +629,7 @@ skills.forEach(skill=>{
 
 </body>
 </html>
+
 
 
 
