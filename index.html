@@ -606,6 +606,48 @@ function animateSkills(){
 window.addEventListener("scroll", animateSkills);
 window.addEventListener("load", animateSkills);
 </script>
+    <!-- your other scripts already here -->
+
+<script>
+tsParticles.load("particles-js", {
+  background: {
+    color: { value: "transparent" }
+  },
+  fpsLimit: 60,
+  particles: {
+    number: { value: 80 },
+    color: { value: "#1abc9c" },
+    shape: { type: "circle" },
+    opacity: { value: 0.5 },
+    size: { value: { min: 1, max: 4 } },
+    links: {
+      enable: true,
+      distance: 150,
+      color: "#1abc9c",
+      opacity: 0.4,
+      width: 1
+    },
+    move: {
+      enable: true,
+      speed: 2
+    }
+  },
+  interactivity: {
+    events: {
+      onHover: {
+        enable: true,
+        mode: "repulse"
+      }
+    },
+    modes: {
+      repulse: { distance: 100 }
+    }
+  },
+  detectRetina: true
+});
+</script>
+
+</body>
 </body>
 </html>
 
