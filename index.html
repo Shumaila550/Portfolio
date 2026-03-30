@@ -191,8 +191,13 @@ body.dark .theme-toggle {
     display: flex;
     align-items: center;
     gap: 120px;
-    background: linear-gradient(135deg, #0f172a, #1e293b);
-    color: white;
+
+    background: var(--card); /* solid like other sections */
+
+    position: relative;
+    z-index: 1;
+
+    border-radius: 0 0 20px 20px;
 }
 
 
