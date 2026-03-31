@@ -131,7 +131,6 @@ nav ul li a.active::after {
 nav ul li a:hover {
     color: var(--accent);
 }
-    backdrop-filter: blur(10px);
 body.dark nav {
     background: rgba(15, 23, 42, 0.85);
 }
@@ -376,6 +375,42 @@ footer {
     top: 0;
     left: 0;
 }
+    /* ANIMATED DEMO BUTTON */
+.demo-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 30px;
+    background: linear-gradient(45deg, #6366f1, #22c55e);
+    position: relative;
+    overflow: hidden;
+    transition: 0.4s ease;
+}
+
+/* Shine effect */
+.demo-btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(255,255,255,0.5), transparent);
+    transition: 0.5s;
+}
+
+.demo-btn:hover::before {
+    left: 100%;
+}
+
+.demo-btn:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 15px rgba(99, 102, 241, 0.6);
+}
 </style>
     <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
 </head>
@@ -475,7 +510,7 @@ footer {
             <h3>NovaTech Solution</h3>
             <p>A professional digital agency website delivering innovative, scalable, and user-focused solutions.</p>
             <div class="project-links">
-                <a href="https://shumaila550.github.io/MiniOrgSystem/" target="_blank">Demo</a>
+                <a href="https://shumaila550.github.io/MiniOrgSystem/"  target="_blank" class="demo-btn"> 🚀 Live Demo
             </div>
         </div>
 
@@ -484,7 +519,7 @@ footer {
             <h3>CareTech Hospital ERP System</h3>
             <p>is a centralized ERP solution designed to streamline hospital management and operational workflows.</p>
             <div class="project-links">
-                <a href="https://shumaila550.github.io/Digital-Agency/" target="_blank">Demo</a>
+                <a href="https://shumaila550.github.io/Digital-Agency/"  target="_blank" class="demo-btn"> 🚀 Live Demo
             </div>
         </div>
          
@@ -493,7 +528,7 @@ footer {
           <h3>Blog Website</h3>
          <p>Developed a fully responsive blog website with a clean UI and integrated dark mode for improved user experience.</p>
          <div class="project-links">
-             <a href="https://shumaila550.github.io/blog/" target="_blank">Demo</a>
+             <a href="https://shumaila550.github.io/blog/"  target="_blank" class="demo-btn"> 🚀 Live Demo
             </div>
    </div>
 
