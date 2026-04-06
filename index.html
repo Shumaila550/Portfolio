@@ -37,16 +37,10 @@ body {
 }
     /* BUTTONS */
 .btn {
-    display: inline-block;
-    margin-top: 25px;
-    margin-right: 12px;
-    padding: 12px 26px;
-    background: var(--accent);
-    color: white;
-    text-decoration: none;
-    border-radius: 8px;
-    font-weight: 500;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+     padding: 12px 28px;
+    border-radius: 30px;
+    font-weight: 600;
+    background: linear-gradient(135deg, #1abc9c, #0ea5e9);
 }
 
 .btn:hover {
@@ -186,16 +180,14 @@ body.dark .theme-toggle {
 }
 
 .hero {
+   .hero {
     min-height: 100vh;
-    padding: 140px 8%;
+    padding: 120px 8%;
     display: flex;
     align-items: center;
-    gap: 120px;
-    background: transparent; /* solid transparent sections */
-    position: relative;
-    z-index: 1;
-
-    border-radius: 0 0 20px 20px;
+    justify-content: space-between;
+    gap: 60px;
+}
 }
 /* Optional overlay for readability */
 .hero::before {
@@ -302,10 +294,14 @@ body.dark .progress{
 }
   
 .project-card {
-    background: var(--card);
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+   background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.1);
+    transition: 0.3s ease;;
+}
+    .project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
 }
 
 .project-image {
