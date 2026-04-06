@@ -1,9 +1,9 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <title>Shumaila | Portfolio</title>
 
 <style>
@@ -31,16 +31,22 @@ body.dark {
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: Arial, sans-serif;
     background: var(--bg);
     color: var(--text);
 }
     /* BUTTONS */
 .btn {
-     padding: 12px 28px;
-    border-radius: 30px;
-    font-weight: 600;
-    background: linear-gradient(135deg, #1abc9c, #0ea5e9);
+    display: inline-block;
+    margin-top: 25px;
+    margin-right: 12px;
+    padding: 12px 26px;
+    background: var(--accent);
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .btn:hover {
@@ -181,12 +187,15 @@ body.dark .theme-toggle {
 
 .hero {
     min-height: 100vh;
-    padding: 120px 8%;
+    padding: 140px 8%;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 60px;
-}
+    gap: 120px;
+    background: transparent; /* solid transparent sections */
+    position: relative;
+    z-index: 1;
+
+    border-radius: 0 0 20px 20px;
 }
 /* Optional overlay for readability */
 .hero::before {
@@ -293,14 +302,10 @@ body.dark .progress{
 }
   
 .project-card {
-   background: rgba(255,255,255,0.08);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255,255,255,0.1);
-    transition: 0.3s ease;;
-}
-    .project-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+    background: var(--card);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
 }
 
 .project-image {
